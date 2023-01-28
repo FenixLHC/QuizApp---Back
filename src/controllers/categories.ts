@@ -14,7 +14,6 @@ const getCategories = async (req:Request, res:Response) => {
 
 const getCategory = async (req:Request, res:Response) => {
     const {id} = req.params
-    console.log(id)
     try {
         const category = await findCategory(id)
         const response = category ? {code: 200, content: category} : {code: 404, content: 'Not found'}
